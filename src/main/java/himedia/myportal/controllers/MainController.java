@@ -1,5 +1,7 @@
 package himedia.myportal.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,9 +13,10 @@ import himedia.myportal.exceptions.MainControllerException;
 
 @Controller
 public class MainController {
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	@RequestMapping({"/", "/main"})
 	public String main() {
-		
+		logger.debug("마이포털 메인 페이지");
 //		return "/WEB-INF/views/home.jsp";
 		return "home";
 	}
