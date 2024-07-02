@@ -38,6 +38,7 @@ window.addEventListener("load", event => {
 		.addEventListener("click", checkEmail);
 		
 	// 가입 폼 Validation
+	/*
 	document.getElementById("join-form")
 		.addEventListener("submit", event => {
 		const frm = event.target;
@@ -83,5 +84,5 @@ window.addEventListener("load", event => {
 		frm.submit();
 		
 	});
-	
+	*/
 });
