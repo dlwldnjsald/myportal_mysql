@@ -10,7 +10,7 @@
 <!-- TODO: 현재 페이지에 적절한 CSS를 임포트하십시오. -->
 <link type="text/css" 
 	rel="stylesheet" 
-	href='<c:url value="/css/home.css" />'/>
+	href='<c:url value="/css/users.css" />'/>
 </head>
 <body>
   <div id="container">
