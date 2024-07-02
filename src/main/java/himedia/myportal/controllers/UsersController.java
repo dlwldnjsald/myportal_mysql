@@ -29,7 +29,8 @@ public class UsersController {
 	
 	//	가입 폼
 	@GetMapping({"", "/", "/join"})
-	public String join() {
+	public String join(@ModelAttribute UserVo vo) {
+		vo.setGender("F");
 		return "users/joinform";
 	}
 	
@@ -48,6 +49,7 @@ public class UsersController {
 				System.err.println("Error:" + e);
 			}
 			model.addAllAttributes(result.getModel());
+			
 //			return "redirect:/user/join";
 			return "users/joinform";
 		}
