@@ -12,6 +12,12 @@
 <link type="text/css" 
 	rel="stylesheet" 
 	href='<c:url value="/css/users.css" />'/>
+<style>
+.error {
+	color: red;
+	font-weight: bold;
+}
+</style>
 </head>
 <body>
   <div id="container">
@@ -41,48 +47,48 @@
 
 		<label for="name">이름</label>
 		<form:input path="name" placeholder="이름을 입력하십시오" /><br>
-		<form:errors path="name" cssClass="error" />		
+		<form:errors path="name" cssClass="error" /><br>		
 		<!-- 이름 필드 에러 메시지 -->
-		<spring:hasBindErrors name="userVo">
+		<%--spring:hasBindErrors name="userVo">
 			<c:if test="${errors.hasFieldErrors('name') }">
 				<strong style="color:red;">
 				${errors.getFieldError('name').defaultMessage }
 				</strong>
 				<br>
 			</c:if>
-		</spring:hasBindErrors>
+		</spring:hasBindErrors --%>
 		
 		<label for="password">비밀번호</label>
 		<!-- input name="password" type="password" placeholder="비밀번호를 입력하십시오"><br -->
 		<form:input path="password" placeholder="비밀번호를 입력하십시오" /><br>
-		<form:errors path="password" />
+		<form:errors path="password" cssClass="error"/><br>
 		<!-- 비밀번호 에러 메시지 -->
-		<spring:hasBindErrors name="userVo">
+		<%--spring:hasBindErrors name="userVo">
 			<c:if test="${errors.hasFieldErrors('password') }">
 				<strong style="color:red;">
 				${errors.getFieldError('password').defaultMessage }
 				</strong>
 				<br>
 			</c:if>
-		</spring:hasBindErrors>
+		</spring:hasBindErrors --%>
 		
 		<label for="email">이메일</label>
 		<!-- input type="text" name="email" placeholder="이메일을 입력하십시오." -->
 		<form:input path="email" placeholder="이메일을 입력하십시오" />
-		<form:errors path="email" />
 		<input type="button" id="check-email"
 			data-target="<c:url value="/users/checkEmail" />"
 			value="이메일 중복체크" /><br>
 		<input type="hidden" name="emailCheck" value="n" />
 		<!-- 이메일 필드 에러 메시지 -->
-		<spring:hasBindErrors name="userVo">
+		<%--spring:hasBindErrors name="userVo">
 			<c:if test="${errors.hasFieldErrors('email') }">
 				<strong style="color:red;">
 				${errors.getFieldError('email').defaultMessage }
 				</strong>
 				<br>
 			</c:if>
-		</spring:hasBindErrors>
+		</spring:hasBindErrors --%>
+		<form:errors path="email" cssClass="error" /><br>
 	
 		<label for="gender">성별</label>
 		<!-- input type="radio" name="gender" value="M" checked>남성</radio -->
