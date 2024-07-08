@@ -13,7 +13,7 @@
 			alias="UserVo" />
 		<typeAlias 
 			type="himedia.myportal.repositories.vo.BoardVo"
-			alias="BoardVo" />
+			alias="boardVo" />
 	</typeAliases>
 	<!-- 테이블 정보와 객체 정보 매핑을 위한 매퍼 -->
 	<mappers>

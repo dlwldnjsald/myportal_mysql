@@ -12,11 +12,8 @@
 	<!-- 게시물 입력 (INSERT) -->
 	<insert id="insert" parameterType="GuestbookVo">
 		<!-- 시퀀스로부터 pk를 받아오는 쿼리 (메인 쿼리 이전 수행: Oracle) -->
-		<selectKey keyProperty="no" resultType="long" order="BEFORE">
-		SELECT seq_guestbook_no.nextval FROM dual
-		</selectKey>
-		INSERT into guestbook (no, name, password, content) 
-		VALUES(#{no}, #{name}, #{password}, #{content})
+		INSERT into guestbook ( name, password, content) 
+		VALUES( #{name}, #{password}, #{content})
 	</insert>
 	
 	<!-- 게시물 삭제 (DELETE) -->

@@ -4,11 +4,8 @@
 <mapper namespace="users">
 	<!-- INSERT (가입) -->
 	<insert id="insert" parameterType="UserVo">
-		<selectKey keyProperty="no" resultType="long" order="BEFORE">
-		SELECT seq_users_pk.nextval FROM dual
-		</selectKey>
-	INSERT INTO users (no, name, password, email, gender)
-	VALUES(#{no}, #{name}, #{password}, #{email}, #{gender})
+		INSERT INTO users ( name, password, email, gender)
+		VALUES( #{name}, #{password}, #{email}, #{gender})
 	</insert>
 	
 	

@@ -37,9 +37,18 @@
 		<property name="implicitCachingEnabled" value="true" />
 		<qualifier value="main-db" />	
 	</bean>
+
+	<!-- mysql DataSource -->
+	<bean id="mysqlDatasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" lazy-init="false">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/webdb"/>
+		<property name="username" value="root"/>
+		<property name="password" value="himedia"/>
+	</bean>
+	
 	<!-- MyBatis SqlSessionFactoryBean -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="oracleDatasource" />
+		<property name="dataSource" ref="mysqlDatasource" />
 		<property name="configLocation" value="classpath:/mybatis/configuration.xml" />
 	</bean>
 	

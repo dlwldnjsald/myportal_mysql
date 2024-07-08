@@ -4,12 +4,10 @@
 <mapper namespace="board">
 	<!-- 게시물 작성 -->
 	<insert id="insert" parameterType="BoardVo">
-	<selectKey keyProperty="no" resultType="long" order="BEFORE">
-	SELECT seq_board_pk.nextval FROM dual
-	</selectKey>
+
 	<![CDATA[
-	INSERT INTO board (no, title, content, hit, reg_date, user_no) 
-	VALUES(#{no}, #{title}, #{content}, 0, sysdate, #{userNo})
+	INSERT INTO board (title, content, hit, reg_date, user_no) 
+	VALUES(#{title}, #{content}, 0, now(), #{userNo})
 	]]>
 	</insert>
 	
